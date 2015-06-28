@@ -3,7 +3,7 @@ describe('The addWord method', function(){
 
   beforeEach(function(){
     prefixTree = new PrefixTree();
-  })
+  });
 
   it('should be able to add one letter words', function(){
     prefixTree.addWord('a');
@@ -37,7 +37,7 @@ describe('The retrieveWords method', function(){
   var testSets = {
     'ca': {'cat': true, 'cart': true, 'carrot': true, 'cabbage': true},
     'java': ['java', 'javascript'],
-  }
+  };
 
   beforeEach(function(){
     prefixTree = new PrefixTree();
@@ -49,7 +49,7 @@ describe('The retrieveWords method', function(){
   it('should be able to retrieve all words from the prefix tree when no prefix is input', function(){
     var retrievedWords = prefixTree.getWords();
     retrievedWords.sort();
-    var deepEquals = sinon.deepEqual(retrievedWords, testWords)
+    var deepEquals = sinon.deepEqual(retrievedWords, testWords);
     expect(deepEquals).to.be(true);
   });
   it('should be able to retrieve all words that start with an input prefix', function(){
@@ -85,7 +85,7 @@ describe('The retrieveWords method', function(){
     retrievedWords.sort();
     var deepEquals = sinon.deepEqual(retrievedWords, testSets['java']);
     expect(deepEquals).to.be(true);
-  })
+  });
 });
 
 describe('The removeWord method', function(){
